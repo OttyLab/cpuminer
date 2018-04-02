@@ -1,3 +1,10 @@
+//
+// ottylab update history <ottylab@gmail.com>
+//
+// 2018/02/17 @001 Add flag to control thread loops
+// 2018/04/02 @002 Suppot iOS
+//
+
 #ifndef __MINER_H__
 #define __MINER_H__
 
@@ -79,7 +86,11 @@ static inline uint32_t swab32(uint32_t v)
 }
 
 #ifdef HAVE_SYS_ENDIAN_H
+#ifdef __APPLE__ //@002A
+#include <machine/endian.h> //@002A
+#else //@002A
 #include <sys/endian.h>
+#endif // __APPLE__ //@002A
 #endif
 
 #if !HAVE_DECL_BE32DEC
@@ -166,6 +177,7 @@ struct thr_info {
 	int		id;
 	pthread_t	pth;
 	struct thread_q	*q;
+	int run; //@001
 };
 
 struct work_restart {
