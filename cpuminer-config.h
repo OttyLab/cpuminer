@@ -173,9 +173,9 @@
 #define STDC_HEADERS 1
 
 /* Define to 1 if assembly routines are wanted. */
-#ifndef __APPLE__
+#if !defined(__APPLE__) && !defined(__i386__)
 #define USE_ASM 1
-#endif // __APPLE__
+#endif // __APPLE__ or __i386__
 
 /* Define to 1 if AVX assembly is available. */
 /* #undef USE_AVX */
