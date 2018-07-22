@@ -22,7 +22,7 @@ add_library(
     sha2.c
     sha2-arm.S
     sha2-x64.S
-    sha2-x86.S
+    sha2-x86-notextrel.S
     util.c
     yescrypt.c
     libcpuminer.c
