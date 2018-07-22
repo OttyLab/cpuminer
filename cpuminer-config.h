@@ -173,7 +173,7 @@
 #define STDC_HEADERS 1
 
 /* Define to 1 if assembly routines are wanted. */
-#if !defined(__APPLE__) && !defined(__i386__)
+#if !defined(__APPLE__)
 #define USE_ASM 1
 #endif // __APPLE__ or __i386__
 
